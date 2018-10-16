@@ -1,0 +1,30 @@
+type Module {
+    id: String!
+    name: String!
+}
+
+type EntitySchema {
+    id: String!
+}
+
+type Entity {
+    id: String!
+    properties: [Property!]
+}
+
+type Property {
+    id: String!
+    name: String!
+    propertyType: String!
+    data: String
+    entity_id: String!
+    entity: Entity!
+}
+
+
+type Query {
+    module(id: String!): Module
+    modules: [Module!]
+    entitySchema(id: String!): EntitySchema
+    entitySchemas: [EntitySchema]!
+}
